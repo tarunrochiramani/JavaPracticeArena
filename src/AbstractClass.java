@@ -10,10 +10,13 @@ abstract class ParentAbstractClass {
     private String myVar;
 
     ParentAbstractClass() {
-        System.out.println("Sample Abstract Class Constructor for : " + this.getClass().getCanonicalName());
+        System.out.println("Sample Abstract Class Constructor for - " + this.getClass().getCanonicalName());
     }
 
-    private void privateMethod(){};
+    ParentAbstractClass(String myVar) {
+        this.myVar = myVar;
+        System.out.println("Overloaded ParentAbstract Class constructor invoked.");
+    }
 
     public String getMyVar() {
         return myVar;
@@ -32,14 +35,17 @@ abstract class ParentAbstractClass {
 
 public class AbstractClass extends ParentAbstractClass {
     public AbstractClass() {
-        System.out.println("Constructor for : " + this.getClass().getCanonicalName());
+        System.out.println("Constructor for - " + this.getClass().getCanonicalName());
     }
 
     public AbstractClass(String myVar) {
-        System.out.println("Constructor with argument for : " + this.getClass().getCanonicalName());
+        super(myVar);
+        System.out.println("Constructor with argument for - " + this.getClass().getCanonicalName());
     }
 
-    public void privateMethod() {};
+    public void abstractClass() {
+        System.out.println("Method has same name as the class");
+    }
 
     public void printSomething() {
         System.out.println("Overriding abstract method");
@@ -49,12 +55,16 @@ public class AbstractClass extends ParentAbstractClass {
 //  public void finalMethod();
 
     public static void main(String[] args) {
-        ParentAbstractClass abstractClass = new AbstractClass("blah");
-        abstractClass.setMyVar("MyVar");
-        System.out.println(abstractClass.getMyVar());
-        abstractClass.printSomething();
-        abstractClass.finalMethod();
+        ParentAbstractClass abstractClassObject = new AbstractClass("blah");
+        System.out.println(abstractClassObject.getMyVar());
 
-        abstractClass = new AbstractClass();
+        abstractClassObject = new AbstractClass();
+        abstractClassObject.setMyVar("MyVar");
+        System.out.println(abstractClassObject.getMyVar());
+        ((AbstractClass)abstractClassObject).abstractClass();
+
+        abstractClassObject.printSomething();
+        abstractClassObject.finalMethod();
+
     }
 }
