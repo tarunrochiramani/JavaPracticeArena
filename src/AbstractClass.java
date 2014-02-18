@@ -27,7 +27,7 @@ abstract class ParentAbstractClass {
         System.out.println("Final method in Parent Abstract Class");
     }
 
-    public abstract void printSomething();
+    protected abstract void printSomething(); // Overridden method cannot have a more restrictive access modifier i.e the overriden method can have protected or public
 }
 
 public class AbstractClass extends ParentAbstractClass {

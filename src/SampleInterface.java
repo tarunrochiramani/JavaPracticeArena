@@ -16,11 +16,13 @@ interface ParentInterface2 {
     void parentInterface2Method();
 }
 
+abstract class EmptySuperClass implements SampleInterface {}
+
 /**
  * Default constructor implemented by compiler.
  * Implements interface and their methods.
  */
-class SampleInterfaceImplementer implements SampleInterface {
+class SampleInterfaceImplementer extends EmptySuperClass {
 
     @Override
     public void parentInterface1Method() {
