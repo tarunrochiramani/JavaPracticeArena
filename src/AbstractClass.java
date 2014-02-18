@@ -35,6 +35,10 @@ public class AbstractClass extends ParentAbstractClass {
         System.out.println("Constructor for : " + this.getClass().getCanonicalName());
     }
 
+    public AbstractClass(String myVar) {
+        System.out.println("Constructor with argument for : " + this.getClass().getCanonicalName());
+    }
+
     public void privateMethod() {};
 
     public void printSomething() {
@@ -45,10 +49,12 @@ public class AbstractClass extends ParentAbstractClass {
 //  public void finalMethod();
 
     public static void main(String[] args) {
-        ParentAbstractClass abstractClass = new AbstractClass();
+        ParentAbstractClass abstractClass = new AbstractClass("blah");
         abstractClass.setMyVar("MyVar");
         System.out.println(abstractClass.getMyVar());
         abstractClass.printSomething();
         abstractClass.finalMethod();
+
+        abstractClass = new AbstractClass();
     }
 }
