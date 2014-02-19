@@ -8,6 +8,10 @@ public class AutoBoxing {
         System.out.println("long method");
     }
 
+    static void widenAndBox(Object x) {
+        System.out.println("Widen and box method");
+    }
+
     public static void main(String[] args) {
         Integer x = 1;
         System.out.println(++x);
@@ -27,6 +31,8 @@ public class AutoBoxing {
         System.out.println("c equals d --> " + c.equals(d));
 
         go(5); // widening is preferred over boxing
+
+        widenAndBox(5); //box first and then widen
 
     }
 }
