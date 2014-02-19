@@ -6,6 +6,10 @@ public class Statics {
 }
 
 class StaticsSubClass extends Statics {
+    static {
+        System.out.println("Executing the Static block");
+    }
+
     static void doSomething() {
         System.out.println("Redefining static method, not overriding");
     }
