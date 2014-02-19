@@ -12,6 +12,10 @@ public class AutoBoxing {
         System.out.println("Widen and box method");
     }
 
+    static void varArgsAndBoxing(Object... x) {
+        System.out.println("Var args and boxing / widening");
+    }
+
     public static void main(String[] args) {
         Integer x = 1;
         System.out.println(++x);
@@ -34,5 +38,6 @@ public class AutoBoxing {
 
         widenAndBox(5); //box first and then widen
 
+        varArgsAndBoxing(5,5); // var args with boxing and widening.
     }
 }
