@@ -1,2 +1,5 @@
 .idea/
 *.iml
+resources/config.properties
+target
+out
